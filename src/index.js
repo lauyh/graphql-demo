@@ -3,7 +3,6 @@ const express = require('express')
 const logger = require('morgan')
 const cors = require('cors')
 const helmet = require('helmet')
-const {ApolloServer, ApolloError, ValidationError, gql} = require('apollo-server')
 const app = express()
 app.use(logger('dev')); //logging
 app.use(express.json())
