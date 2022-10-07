@@ -12,7 +12,7 @@ exports.up = function(knex) {
     table.decimal('longtitude').notNullable();
     table.boolean('is_active').notNullable();
     table.datetime('created_at', { precision: 6 }).defaultTo(knex.fn.now());
-    table.index(['id', 'merchant_name'], 'idx_id_merchant_name')
+    table.index(['id', 'merchant_name', 'is_active'], 'idx_id_merchant_name_is_active')
   })
 };
 
