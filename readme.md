@@ -30,3 +30,4 @@ The following subsection will be the step to setup the running environment.
 10. [Three ways to represent your GraphQL schema](https://www.apollographql.com/blog/backend/schema-design/three-ways-to-represent-your-graphql-schema/)
 11. [GraphQL with Apollo Server and Express - GraphQL Series - Part 1](https://cloudnweb.dev/2019/06/graphql-with-apollo-server-and-express-graphql-series-part-1/)
 12. [Apollo Server Express Auth](https://github.com/nandymandy1/apollo-server-express-auth)
+13. [Express + PG + Docker Tutorial](https://github.com/hidjou/classsed-docker-tutorial/blob/done/docker-compose.yml)
