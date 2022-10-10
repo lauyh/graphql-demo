@@ -1,6 +1,7 @@
 # Setup
 The following subsection will be the step to setup the running environment.
 
+## Run Without Docker
 1. Install [Node.JS](https://nodejs.org/en/)
 2. Install [PostgreSQL](https://www.postgresql.org/download/)
 3. Git clone [this project](https://github.com/lauyh/graphql-demo) in your `Document` folder.
@@ -10,13 +11,19 @@ The following subsection will be the step to setup the running environment.
 7. Open the terminal in the VS Code and run `npm run migrate` and `npm run seed`.
 8. To serve the application, run `npm start` then perform the query via postman. The example will be listed in the `graphql-demo.postman_collection.json`.
 
+## Run With Docker
+1. Install [Docker](https://www.docker.com/)
+2. Git clone [this project](https://github.com/lauyh/graphql-demo) in your `Document` folder.
+3. Check out the branch to `docker-support`.
+4. Run the command in `command.txt`
+5. The endpoint are similar, the only different is the port is hardcoded to port 4000.
 # Notes
 - The date time format for `created_at` is following the postgresql Datetime format which is `DD-MM-YYYY HH:mm:ss`.
 - The reason of why I choosing PostgreSQL over MySQL is because it performance.
 - Apollo graphql lib is being used is due to it is more production ready and it has many useful feature.
 - Knex.JS is more user friendly compare to Sequelize.
 - To be implement  in the future, add user auth and protect the graphql resources.
-- Adding docker support in the future.
+- Convert the docker-compose to use `.env` file, instead of hardcoding the value in docker-compose.yml file.
 # Reference
 1. [PostgreSQL Index Type](https://www.postgresql.org/docs/current/indexes-types.html)
 2. [Optimizing Query With Explain - MySQL](https://dev.mysql.com/doc/refman/5.7/en/using-explain.html)
@@ -30,4 +37,3 @@ The following subsection will be the step to setup the running environment.
 10. [Three ways to represent your GraphQL schema](https://www.apollographql.com/blog/backend/schema-design/three-ways-to-represent-your-graphql-schema/)
 11. [GraphQL with Apollo Server and Express - GraphQL Series - Part 1](https://cloudnweb.dev/2019/06/graphql-with-apollo-server-and-express-graphql-series-part-1/)
 12. [Apollo Server Express Auth](https://github.com/nandymandy1/apollo-server-express-auth)
-13. [Express + PG + Docker Tutorial](https://github.com/hidjou/classsed-docker-tutorial/blob/done/docker-compose.yml)
