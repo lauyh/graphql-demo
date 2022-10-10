@@ -30,5 +30,21 @@ exports.seed = async function (knex) {
       longtitude: 101.6385387,
       is_active: false,
     },
+    {
+      id: 4,
+      merchant_name: "Restoran BRJ Alam Damai",
+      phone_number: "0328569103",
+      latitude: 3.062289,
+      longtitude: 101.741862,
+      is_active: true,
+    },
+    {
+      id: 5,
+      merchant_name: "Dáo Damansara Jaya",
+      phone_number: "0374990021",
+      latitude: 3.12815,
+      longtitude: 101.6140383,
+      is_active: true,
+    },
   ]);
 };
