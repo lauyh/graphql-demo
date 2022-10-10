@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "a443fc66-9402-4a92-bab3-ca9412078152",
+		"name": "graphql-demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9794957"
+	},
+	"item": [
+		{
+			"name": "getAllMerchant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\n    merchants{\n        id\n        merchant_name\n        is_active\n        created_at\n    }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get merchant by id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\n    merchant(id:1){\n        id\n        merchant_name\n        latitude\n        longtitude\n        is_active\n        created_at\n    }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Merchant By Pagination",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\n    merchantsByPagination(page:1, limit: 2){\n        id\n        merchant_name\n        latitude\n        longtitude\n        is_active\n        created_at\n    }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add merchant (unique)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation{\n    addMerchant(\n        merchant : {\n            merchant_name: \"Mr. Tuk Tuk Empire City PJ\",\n            phone_number: \"0377320138\",\n            latitude: 3.1663882,\n            longtitude: 101.6155812,\n            is_active: false\n        }  \n    ){\n        success\n        status_code\n        message\n    }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add merchant (on duplicate)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation{\n    addMerchant(\n        merchant : {\n            merchant_name: \"Mr. Tuk Tuk Empire City PJ\",\n            phone_number: \"0377320138\",\n            latitude: 3.1663882,\n            longtitude: 101.6155812,\n            is_active: false\n        }  \n    ){\n        success\n        status_code\n        message\n    }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update merchant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation{\n    updateMerchant(\n        merchant : {\n            id: 7,\n            merchant_name: \"Mr. Tuk Tuk Starling Mall\",\n            phone_number: \"0377320138\",\n            latitude: 3.1663882,\n            longtitude: 101.6155812,\n            is_active: false\n        }  \n    ){\n        success\n        status_code\n        message\n    }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "batch update active status",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation{\n    batchUpdateStatus(\n        status :  true \n    ){\n        success\n        status_code\n        message\n    }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
