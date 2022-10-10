@@ -1,3 +1,6 @@
 1. docker compose up --build -d
 2. docker exec graphql-demo-server-1 npm run migrate
 3. docker exec graphql-demo-server-1 npm run seed
+
+Only run this command when you are not using the image anymore:
+docker compose down --rmi all
