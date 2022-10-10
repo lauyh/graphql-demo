@@ -1,7 +1,7 @@
-FROM alphine
+FROM alpine
 RUN apk add --update nodejs npm
 WORKDIR /var/www/html
 COPY package.json ./
-RUN npm ci
+RUN npm install
 COPY . .
-EXPOSE 3000
+CMD ["npm", "start"]
