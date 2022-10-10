@@ -9,7 +9,7 @@ const typeDefs = gql`
     phone_number: String!
     latitude: Float!
     longtitude: Float!
-    is_active: Boolean
+    is_active: Boolean!
     created_at: Datetime!
   }
 
@@ -18,12 +18,21 @@ const typeDefs = gql`
     phone_number: String!
     latitude: Float!
     longtitude: Float!
-    is_active: Boolean
+    is_active: Boolean!
+  }
+
+  input MerchantUpdateInput {
+    id: Int
+    merchant_name: String!
+    phone_number: String!
+    latitude: Float!
+    longtitude: Float!
+    is_active: Boolean!
   }
 
   type Response {
-    success: Boolean
-    status_code: Int
+    success: Boolean!
+    status_code: Int!
     message: String
   }
 
@@ -34,8 +43,8 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addMerchants(merchant: MerchantInput): Response
-    updateMerchants(merchant: MerchantInput): Response
+    addMerchant(merchant: MerchantInput): Response
+    updateMerchant(merchant: MerchantUpdateInput): Response
     batchUpdateStatus(status: Boolean): Response
   }
 `;
