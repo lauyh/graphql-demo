@@ -7,9 +7,9 @@ const moment = require("moment");
 exports.up = function (knex) {
   return knex.schema.createTable("merchants", function (table) {
     table.primary(["id", "merchant_name"]);
-    table.increments("id");
-    table.string("merchant_name").notNullable();
-    table.string("phone_number").notNullable();
+    table.increments("id").unique();
+    table.string("merchant_name").notNullable().unique();
+    table.string("phone_number").notNullable().unique();
     table.decimal("latitude").notNullable();
     table.decimal("longtitude").notNullable();
     table.boolean("is_active").notNullable();
@@ -17,8 +17,8 @@ exports.up = function (knex) {
       .datetime("created_at")
       .defaultTo(moment(new Date()).format("DD-MM-YYYY HH:mm:ss"));
     table.index(
-      ["id", "merchant_name", "is_active"],
-      "idx_id_merchant_name_is_active"
+      ["merchant_name", "is_active"],
+      "idx_merchant_name_is_active"
     );
   });
 };
