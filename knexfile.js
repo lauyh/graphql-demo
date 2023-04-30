@@ -3,56 +3,57 @@
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
-require('dotenv').config()
-
+require("dotenv").config();
 
 module.exports = {
   development: {
-    client: 'postgresql',
+    client: "postgresql",
     connection: {
+      host: process.env.HOST,
       database: process.env.DATABASE,
-      user:     process.env.PG_USERNAME,
-      password: process.env.PG_PASSWORD
+      user: process.env.PG_USERNAME,
+      password: process.env.PG_PASSWORD,
     },
     pool: {
       min: 2,
-      max: 10
+      max: 10,
     },
     migrations: {
-      tableName: 'knex_migrations'
-    }
+      tableName: "knex_migrations",
+    },
   },
 
   staging: {
-    client: 'postgresql',
+    client: "postgresql",
     connection: {
+      host: process.env.HOST,
       database: process.env.DATABASE,
-      user:     process.env.PG_USERNAME,
-      password: process.env.PG_PASSWORD
+      user: process.env.PG_USERNAME,
+      password: process.env.PG_PASSWORD,
     },
     pool: {
       min: 2,
-      max: 10
+      max: 10,
     },
     migrations: {
-      tableName: 'knex_migrations'
-    }
+      tableName: "knex_migrations",
+    },
   },
 
   production: {
-    client: 'postgresql',
+    client: "postgresql",
     connection: {
+      host: process.env.HOST,
       database: process.env.DATABASE,
-      user:     process.env.PG_USERNAME,
-      password: process.env.PG_PASSWORD
+      user: process.env.PG_USERNAME,
+      password: process.env.PG_PASSWORD,
     },
     pool: {
       min: 2,
-      max: 10
+      max: 10,
     },
     migrations: {
-      tableName: 'knex_migrations'
-    }
-  }
-
+      tableName: "knex_migrations",
+    },
+  },
 };

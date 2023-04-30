@@ -17,7 +17,6 @@ The following subsection will be the step to setup the running environment.
 3. Check out the branch to `docker-support`.
 4. Run the command in `command.txt`
 5. The endpoint are similar, the only different is the port is hardcoded to port 4000.
-
 # Notes
 - The date time format for `created_at` is following the postgresql Datetime format which is `DD-MM-YYYY HH:mm:ss`.
 - The reason of why I choosing PostgreSQL over MySQL is because it performance.
@@ -25,8 +24,6 @@ The following subsection will be the step to setup the running environment.
 - Knex.JS is more user friendly compare to Sequelize.
 - To be implement  in the future, add user auth and protect the graphql resources.
 - Convert the docker-compose to use `.env` file, instead of hardcoding the value in docker-compose.yml file.
-- Left out the implementation of `unique()` feature for the columns of *merchant_name*, *id* and *phone_number*.
-
 # Reference
 1. [PostgreSQL Index Type](https://www.postgresql.org/docs/current/indexes-types.html)
 2. [Optimizing Query With Explain - MySQL](https://dev.mysql.com/doc/refman/5.7/en/using-explain.html)
