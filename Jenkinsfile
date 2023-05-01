@@ -10,7 +10,7 @@ pipeline {
       }
       }
       steps {
-        sh 'npm i --production'
+        sh 'npm install'
       }
     }
   }
