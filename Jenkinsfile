@@ -10,7 +10,7 @@ pipeline {
       }
       }
       steps {
-        sh 'npm install'
+        sh 'docker-compose build'
       }
     }
   }
